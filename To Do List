@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffdce0; /* Light pink background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin-right: 20px; /* Space between container and note sticker */
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: #888;
+        }
+
+        .delete-button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .note-sticker {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        <h1>To-Do List</h1>
+        <img src="smiley.png" alt="Smiley Face" width="40" height="40">
+    </div>
+
+    <div class="container">
+        <form id="todoForm">
+            <input type="text" id="todoInput" placeholder="Enter a new task">
+            <button type="submit">Add Task</button>
+        </form>
+        <ul id="todoList">
+            <!-- To-do items will be dynamically added here -->
+        </ul>
+    </div>
+
+    <div class="note-sticker">
+        <h2>My To-Do List</h2>
+        <ul id="noteList">
+            <!-- To-do items will be dynamically added here -->
+        </ul>
+    </div>
+
+    <script>
+        document.getElementById('todoForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var todoInput = document.getElementById('todoInput');
+            var todoList = document.getElementById('todoList');
+            
+            if (todoInput.value.trim() === '') {
+                alert('Please enter a task!');
+                return;
+            }
+            
+            var li = document.createElement('li');
+            li.textContent = todoInput.value;
+            li.className = 'item';
+            
+            var deleteButton = document.createElement('button');
+            deleteButton.textContent = '❌';
+            deleteButton.className = 'delete-button';
+            deleteButton.addEventListener('click', function() {
+                li.remove();
+            });
+            
+            var completeButton = document.createElement('button');
+            completeButton.textContent = '✓';
+            completeButton.addEventListener('click', function() {
+                li.classList.toggle('completed');
+            });
+
+            li.appendChild(completeButton);
+            li.appendChild(deleteButton);
+            todoList.appendChild(li);
+            
+            // Add to note sticker
+            var noteLi = document.createElement('li');
+            noteLi.textContent = todoInput.value;
+            document.getElementById('noteList').appendChild(noteLi);
+            
+            todoInput.value = '';
+        });
+    </script>
+</body>
+</html>

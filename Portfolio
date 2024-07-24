@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        /* Basic CSS for layout and styling */
+        body {
+            font-family: Arial, sans-serif;
+            color: rgb(236, 76, 102);
+            margin: 0;
+            padding: 0;
+            background-color: #fce4ec; /* Light pink background color */
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #b46c6c;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        .hero {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #f0f0f0;
+        }
+        .about {
+            padding: 50px 0;
+            background-color: #fafafa;
+        }
+        .project {
+            padding: 50px 0;
+            background-color: #f0f0f0;
+        }
+        .contact {
+            padding: 50px 0;
+            background-color: #fafafa;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        form {
+            max-width: 500px;
+            margin: auto;
+        }
+        form input,
+        form textarea,
+        form button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        form button {
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+    </header>
+    <nav>
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#project">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section id="hero" class="hero">
+        <div class="container">
+            <h2>Fadumo Mohamud</h2>
+            <p>Aspiring data analyst who recently found their interest in web design.</p>
+        </div>
+    </section>
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I am an aspiring dataa analyst. I love crafting beautiful websites that are both functional and easy to use.</p>
+            <div>
+                <h3>Skills</h3>
+                <img src="https://cdn.jsdelivr.net/npm/devicon/icons/html5/html5-original.svg" alt="HTML5" title="HTML5" width="50" height="50">
+                <img src="https://cdn.jsdelivr.net/npm/devicon/icons/css3/css3-original.svg" alt="CSS3" title="CSS3" width="50" height="50">
+            </div>
+        </div>
+    </section>
+    <section id="project" class="project">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="card">
+                <img src="project-image.jpg" alt="Project 1">
+                <h3>Portfolio Website</h3>
+                <p>A responsive portfolio website built using HTML and CSS.</p>
+                <h3>To Do List</h3>
+                <p>A responsive to-do list built using HTML and CSS.</p>
+
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form action="#">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <div>
+                <a href="https://github.com/yourusername" target="_blank">
+                    <img src="https://cdn.jsdelivr.net/npm/devicon/icons/github/github-original.svg" alt="GitHub" title="GitHub" width="50" height="50">
+                </a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank">
+                    <img src="https://cdn.jsdelivr.net/npm/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" title="LinkedIn" width="50" height="50">
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
